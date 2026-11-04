@@ -1,0 +1,333 @@
+rs0 [direct: primary] test> printjson(rs.conf());
+{
+  _id: 'rs0',
+  version: 16,
+  term: 7,
+  members: [
+    {
+      _id: 0,
+      host: 'mongodb-0.mongodb.internal:27017',
+      arbiterOnly: false,
+      buildIndexes: true,
+      hidden: false,
+      priority: 1,
+      tags: {},
+      secondaryDelaySecs: Long('0'),
+      votes: 1
+    },
+    {
+      _id: 1,
+      host: 'mongodb-1.mongodb.internal:27017',
+      arbiterOnly: false,
+      buildIndexes: true,
+      hidden: false,
+      priority: 1,
+      tags: {},
+      secondaryDelaySecs: Long('0'),
+      votes: 1
+    },
+    {
+      _id: 2,
+      host: 'mongodb-2.mongodb.internal:27017',
+      arbiterOnly: false,
+      buildIndexes: true,
+      hidden: false,
+      priority: 1,
+      tags: {},
+      secondaryDelaySecs: Long('0'),
+      votes: 1
+    },
+    {
+      _id: 3,
+      host: 'mongodb-3.mongodb.internal:27017',
+      arbiterOnly: false,
+      buildIndexes: true,
+      hidden: false,
+      priority: 0,
+      tags: {},
+      secondaryDelaySecs: Long('0'),
+      votes: 1
+    },
+    {
+      _id: 4,
+      host: 'mongodb-4.mongodb.internal:27017',
+      arbiterOnly: false,
+      buildIndexes: true,
+      hidden: false,
+      priority: 0,
+      tags: {},
+      secondaryDelaySecs: Long('0'),
+      votes: 1
+    }
+  ],
+  protocolVersion: Long('1'),
+  writeConcernMajorityJournalDefault: true,
+  settings: {
+    chainingAllowed: true,
+    heartbeatIntervalMillis: 2000,
+    heartbeatTimeoutSecs: 10,
+    electionTimeoutMillis: 10000,
+    catchUpTimeoutMillis: -1,
+    catchUpTakeoverDelayMillis: 30000,
+    getLastErrorModes: {},
+    getLastErrorDefaults: {
+      w: 1,
+      wtimeout: 0
+    },
+    replicaSetId: ObjectId('6ae74ad09eb352bde8072a3b')
+  }
+}
+
+rs0 [direct: primary] test> printjson(rs.status());
+{
+  set: 'rs0',
+  date: ISODate('2026-11-03T04:36:13.710Z'),
+  myState: 1,
+  term: Long('7'),
+  syncSourceHost: '',
+  syncSourceId: -1,
+  heartbeatIntervalMillis: Long('2000'),
+  majorityVoteCount: 3,
+  writeMajorityCount: 3,
+  votingMembersCount: 5,
+  writableVotingMembersCount: 5,
+  optimes: {
+    lastCommittedOpTime: {
+      ts: Timestamp({ t: 1793680565, i: 1 }),
+      t: Long('7')
+    },
+    lastCommittedWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+    readConcernMajorityOpTime: {
+      ts: Timestamp({ t: 1793680565, i: 1 }),
+      t: Long('7')
+    },
+    appliedOpTime: {
+      ts: Timestamp({ t: 1793680565, i: 1 }),
+      t: Long('7')
+    },
+    durableOpTime: {
+      ts: Timestamp({ t: 1793680565, i: 1 }),
+      t: Long('7')
+    },
+    writtenOpTime: {
+      ts: Timestamp({ t: 1793680565, i: 1 }),
+      t: Long('7')
+    },
+    lastAppliedWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+    lastDurableWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+    lastWrittenWallTime: ISODate('2026-11-03T04:36:05.218Z')
+  },
+  lastStableRecoveryTimestamp: Timestamp({ t: 1793680555, i: 1 }),
+  electionCandidateMetrics: {
+    lastElectionReason: 'priorityTakeover',
+    lastElectionDate: ISODate('2026-11-02T08:41:41.151Z'),
+    electionTerm: Long('7'),
+    lastCommittedOpTimeAtElection: {
+      ts: Timestamp({ t: 1793608899, i: 1 }),
+      t: Long('6')
+    },
+    lastSeenWrittenOpTimeAtElection: {
+      ts: Timestamp({ t: 1793608899, i: 1 }),
+      t: Long('6')
+    },
+    lastSeenOpTimeAtElection: {
+      ts: Timestamp({ t: 1793608899, i: 1 }),
+      t: Long('6')
+    },
+    numVotesNeeded: 2,
+    priorityAtElection: 2,
+    electionTimeoutMillis: Long('10000'),
+    priorPrimaryMemberId: 1,
+    numCatchUpOps: Long('0'),
+    newTermStartDate: ISODate('2026-11-02T08:41:41.182Z'),
+    wMajorityWriteAvailabilityDate: ISODate('2026-11-02T08:41:41.233Z')
+  },
+  members: [
+    {
+      _id: 0,
+      name: 'mongodb-0.mongodb.internal:27017',
+      health: 1,
+      state: 1,
+      stateStr: 'PRIMARY',
+      uptime: 71687,
+      optime: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeDate: ISODate('2026-11-03T04:36:05.000Z'),
+      optimeWritten: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeWrittenDate: ISODate('2026-11-03T04:36:05.000Z'),
+      lastAppliedWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastDurableWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastWrittenWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastStableRecoveryTimestamp: Timestamp({ t: 1793680555, i: 1 }),
+      syncSourceHost: '',
+      syncSourceId: -1,
+      infoMessage: '',
+      electionTime: Timestamp({ t: 1793608901, i: 1 }),
+      electionDate: ISODate('2026-11-02T08:41:41.000Z'),
+      configVersion: 16,
+      configTerm: 7,
+      self: true,
+      lastHeartbeatMessage: ''
+    },
+    {
+      _id: 1,
+      name: 'mongodb-1.mongodb.internal:27017',
+      health: 1,
+      state: 2,
+      stateStr: 'SECONDARY',
+      uptime: 71683,
+      optime: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeDurable: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeWritten: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeDate: ISODate('2026-11-03T04:36:05.000Z'),
+      optimeDurableDate: ISODate('2026-11-03T04:36:05.000Z'),
+      optimeWrittenDate: ISODate('2026-11-03T04:36:05.000Z'),
+      lastAppliedWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastDurableWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastWrittenWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastStableRecoveryTimestamp: Timestamp({ t: 1793680545, i: 1 }),
+      lastHeartbeat: ISODate('2026-11-03T04:36:13.370Z'),
+      lastHeartbeatRecv: ISODate('2026-11-03T04:36:13.242Z'),
+      pingMs: Long('0'),
+      lastHeartbeatMessage: '',
+      syncSourceHost: 'mongodb-0.mongodb.internal:27017',
+      syncSourceId: 0,
+      infoMessage: '',
+      configVersion: 16,
+      configTerm: 7
+    },
+    {
+      _id: 2,
+      name: 'mongodb-2.mongodb.internal:27017',
+      health: 1,
+      state: 2,
+      stateStr: 'SECONDARY',
+      uptime: 71683,
+      optime: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeDurable: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeWritten: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeDate: ISODate('2026-11-03T04:36:05.000Z'),
+      optimeDurableDate: ISODate('2026-11-03T04:36:05.000Z'),
+      optimeWrittenDate: ISODate('2026-11-03T04:36:05.000Z'),
+      lastAppliedWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastDurableWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastWrittenWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastStableRecoveryTimestamp: Timestamp({ t: 1793680525, i: 1 }),
+      lastHeartbeat: ISODate('2026-11-03T04:36:13.370Z'),
+      lastHeartbeatRecv: ISODate('2026-11-03T04:36:13.237Z'),
+      pingMs: Long('0'),
+      lastHeartbeatMessage: '',
+      syncSourceHost: 'mongodb-1.mongodb.internal:27017',
+      syncSourceId: 1,
+      infoMessage: '',
+      configVersion: 16,
+      configTerm: 7
+    },
+    {
+      _id: 3,
+      name: 'mongodb-3.mongodb.internal:27017',
+      health: 1,
+      state: 2,
+      stateStr: 'SECONDARY',
+      uptime: 55493,
+      optime: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeDurable: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeWritten: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeDate: ISODate('2026-11-03T04:36:05.000Z'),
+      optimeDurableDate: ISODate('2026-11-03T04:36:05.000Z'),
+      optimeWrittenDate: ISODate('2026-11-03T04:36:05.000Z'),
+      lastAppliedWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastDurableWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastWrittenWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastStableRecoveryTimestamp: Timestamp({ t: 1793680565, i: 1 }),
+      lastHeartbeat: ISODate('2026-11-03T04:36:13.106Z'),
+      lastHeartbeatRecv: ISODate('2026-11-03T04:36:12.994Z'),
+      pingMs: Long('18'),
+      lastHeartbeatMessage: '',
+      syncSourceHost: 'mongodb-0.mongodb.internal:27017',
+      syncSourceId: 0,
+      infoMessage: '',
+      configVersion: 16,
+      configTerm: 7
+    },
+    {
+      _id: 4,
+      name: 'mongodb-4.mongodb.internal:27017',
+      health: 1,
+      state: 2,
+      stateStr: 'SECONDARY',
+      uptime: 55486,
+      optime: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeDurable: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeWritten: {
+        ts: Timestamp({ t: 1793680565, i: 1 }),
+        t: Long('7')
+      },
+      optimeDate: ISODate('2026-11-03T04:36:05.000Z'),
+      optimeDurableDate: ISODate('2026-11-03T04:36:05.000Z'),
+      optimeWrittenDate: ISODate('2026-11-03T04:36:05.000Z'),
+      lastAppliedWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastDurableWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastWrittenWallTime: ISODate('2026-11-03T04:36:05.218Z'),
+      lastStableRecoveryTimestamp: Timestamp({ t: 1793680515, i: 1 }),
+      lastHeartbeat: ISODate('2026-11-03T04:36:13.432Z'),
+      lastHeartbeatRecv: ISODate('2026-11-03T04:36:11.745Z'),
+      pingMs: Long('25'),
+      lastHeartbeatMessage: '',
+      syncSourceHost: 'mongodb-3.mongodb.internal:27017',
+      syncSourceId: 3,
+      infoMessage: '',
+      configVersion: 16,
+      configTerm: 7
+    }
+  ],
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1793680565, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('0Rsb4VJxuY2+jekFlap9PEFjoJI=', 0),
+      keyId: Long('7703207996393783304')
+    }
+  },
+  operationTime: Timestamp({ t: 1793680565, i: 1 })
+}
+
+rs0 [direct: primary] test> 
